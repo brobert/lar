@@ -34,11 +34,13 @@ class MenuItem extends Component {
 
         let content;
         let icon;
-        let text = this.props.id;
+        let text = this.props.label || this.props.id;
+
         if (!!this.props.icon) {
-            icon = <i className="ti-home"></i>;
-            text = <span className="right-nav-text">{this.props.id}</span>
+            icon = <i className={this.props.icon}></i>;
+            text = <span className="right-nav-text">{text}</span>
         }
+
         if (!!this.props.link) {
             content = (
                 <Link to={this.props.link}>
@@ -60,11 +62,12 @@ class MenuItem extends Component {
             ];
 
             const collapsed = (
-                <Collapse isOpen={this.state.expanded}>
-                    <ul id={this.props.id} >
+                <Collapse key={`collapse_${this.props.id}`} isOpen={this.state.expanded}>
+                    <ul key={this.props.id} id={this.props.id} >
                         {
                             this.props.children.map((child) => {
-                                return (<li key={child.id}><Link to={`/${child.path}`}>{child.id}</Link></li>)
+                                return (<MenuItem {...child} />);
+                                // return (<li key={child.id}><Link to={`/${child.path}`}>{child.id}</Link></li>)
                             })
                         }
                     </ul>
@@ -73,8 +76,9 @@ class MenuItem extends Component {
 
             content.push(collapsed);
         } else {
-            return (<li className="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{this.props.id} </li>);
+            return (<li key={this.props.id} className="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{this.props.id} </li>);
         }
+        
         return (
             <li
                 key={this.props.id}

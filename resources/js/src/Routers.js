@@ -19,7 +19,7 @@ const listofPages = [
 
 const Routers = () => {
 
-    if(listofPages.indexOf(location.hash) > -1) {
+    if(listofPages.indexOf(location.pathname) > -1) {
         return(
             <Basepages>
                 <Route  path="/login" component={Login} />

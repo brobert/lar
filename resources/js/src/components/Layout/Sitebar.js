@@ -158,58 +158,7 @@ class Sitebar extends Component{
                         <ul className="nav navbar-nav side-menu" id="sidebarnav">
                         {/* <!-- menu item Dashboard--> */}
                             {menuExt}
-                            <li className="active">
-                                <Link to="/"><i className="ti-home"></i><span className="right-nav-text">Dashboard</span></Link>
-                            </li>
-                            {/* <!-- menu title --> */}
-                            <li className="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Components </li>
-                            {/* <!-- menu item Elements--> */}
-                            <li>
-                                <span
-                                    onClick={this.elements}
-                                    aria-expanded={this.state.plussignele ? "true" : "false"}
-                                    className={this.state.plussignele ? "link" : " link collapsed"}
-                                >
-                                    <div className="pull-left"><i className="ti-palette"></i><span className="right-nav-text">Elements</span></div>
-                                    <div className="pull-right"><i className="ti-plus"></i></div><div className="clearfix"></div>
-                                </span>
-                                <Collapse isOpen={this.state.elements}>
-                                    <ul id="elements"  >
-                                        <li><Link to="/accordion">Accordions</Link> </li>
-                                        <li><Link to="/alerts">Alerts</Link></li>
-                                        <li><Link to="/buttons">Button</Link></li>
-                                        <li><Link to="/colors">Colorpicker</Link></li>
-                                        <li><Link to="/dropdown">Dropdown</Link></li>
-                                        <li><Link to="/lists">Lists</Link></li>
-                                        <li><Link to="/navs">Nav</Link></li>
-                                        <li><Link to="/modal">Modal</Link></li>
-                                        <li><Link to="/nicescroll">Nicescroll</Link></li>
-                                        <li><Link to="/ratings">Ratings</Link></li>
-                                        <li><Link to="/datepicker">Date picker</Link></li>
-                                        <li><Link to="/tabs">Tabs</Link></li>
-                                        <li><Link to="/typographys">Typography</Link></li>
-                                        <li><Link to="/popover_tooltips">Popover tooltips</Link></li>
-                                        <li><Link to="/progess">Progress</Link></li>
-                                        <li><Link to="/switchs">Switch</Link></li>
-                                    </ul>
-                                </Collapse>
-                            </li>
-                            {/* <!-- menu item chat--> */}
-                            <li>
-                                <Link to="./chat"><i className="ti-comments"></i><span className="right-nav-text">Chat </span></Link>
-                            </li>
-                            {/* <!-- menu item mailbox--> */}
-                            <li>
-                                <Link to="./mailbox">
-                                    <i className="ti-email"></i>
-                                    <span className="right-nav-text">Mail box</span>
-                                    <span className="badge badge-pill badge-warning float-right mt-1">HOT</span>
-                                </Link>
-                            </li>
-                            {/* <!-- menu item calendar--> */}
-                            <li>
-                                <Link to="./eventcalendar"><i className="ti-calendar"></i><span className="right-nav-text">Events Calendar</span> </Link>
-                            </li>
+
                             {/* <!-- menu item Charts--> */}
                             <li>
                                 <Link to="/chartjs"><i className="ti-pie-chart"></i><span className="right-nav-text">Charts</span></Link>
